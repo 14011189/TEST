@@ -19,7 +19,7 @@
 void sleep_mil(unsigned int ms)
 {
     #if defined(WIN32)
-      Sleep(ms);
+      Sleep(ms);          // ms = 10^-3, us = 10^-6, ns = 10^-9
     #elif defined(__unix__)
       usleep(1000*ms);
     #else
@@ -54,7 +54,7 @@ void clear_screen ( void )
 
 void set_color(short Color)
 {
-  HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE); // Funzione che mi permette di cambiare colore del testo;
+  HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE); // Function that allows me to change the color of the text
   SetConsoleTextAttribute(hCon,Color);
 }
 void boss(int vet[dim][dim],int dif)
