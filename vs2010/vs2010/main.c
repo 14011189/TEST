@@ -1289,7 +1289,7 @@ int main()                                    // funzione principale del gioco
 {
     int campo[dim][dim],i,l,mossa=0,condizione,velo=100,diff;
     int vittoria=0, punteggio, fine_partita=0, livello, suono, vite;      // Inizializzo le varie variabili del main, fra cui anche il puntatore per il file delle impostazioni
-    int scelta,record;
+    int scelta=0,record;
     char nome[dim];
     FILE *fp;
 
@@ -1373,9 +1373,9 @@ int main()                                    // funzione principale del gioco
 
 
                      sleep_mil(velo);                          // velocità di gioco grazie ad uno sleep del programma
-                     condizione=kbhit();                    // se durante il periodo si è premuto un tasto allora viene imagazzinato il valore come mossa del giocatore,
+                     condizione=_kbhit();                    // se durante il periodo si è premuto un tasto allora viene imagazzinato il valore come mossa del giocatore,
                      if(condizione==1){                     // altrimenti va avanti il gioco
-                         mossa=getch();
+                         mossa=_getch();
                          mossa_giocatore(campo,mossa,suono);
                      }
 
